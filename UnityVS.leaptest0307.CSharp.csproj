@@ -152,7 +152,13 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+    <Compile Include="Assets\Scripts\GameManagerBehavior.cs" />
+    <Compile Include="Assets\Scripts\arrowBoxBehavior.cs" />
+    <Compile Include="Assets\Scripts\basePlainBehavior.cs" />
+    <Compile Include="Assets\Scripts\consoleBoxBehavior.cs" />
+    <Compile Include="Assets\Scripts\scoremeshBehavior.cs" />
     <Compile Include="Assets\Scripts\slicerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\textBoxBehavior.cs" />
     <Compile Include="Assets\Scripts\woodBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
