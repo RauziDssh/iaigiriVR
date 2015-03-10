@@ -104,7 +104,7 @@ public partial class TurboSlice
 	private Mesh getMesh(Sliceable s)
 	{
 		GameObject holder = getMeshHolder(s);
-		Renderer renderer = holder.renderer;
+		Renderer renderer = holder.GetComponent<Renderer>();
 		Mesh mesh = null;
 		if(renderer is MeshRenderer)
 		{
@@ -123,7 +123,7 @@ public partial class TurboSlice
 	private static void setMesh(Sliceable s, Mesh mesh)
 	{
 		GameObject holder = getMeshHolder(s);
-		Renderer renderer = holder.renderer;
+		Renderer renderer = holder.GetComponent<Renderer>();
 		MeshFilter filter = null;
 		if(renderer is MeshRenderer)
 		{

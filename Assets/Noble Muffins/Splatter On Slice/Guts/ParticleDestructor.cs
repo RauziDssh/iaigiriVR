@@ -13,7 +13,7 @@ public class ParticleDestructor : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(!particleSystem.isPlaying)
+		if(!GetComponent<ParticleSystem>().isPlaying)
 		{
 			GameObject.Destroy(gameObject);
 		}

@@ -327,7 +327,7 @@ partial class TurboSlice
 			{
 				foreach(GameObject r in results)
 				{
-					Collider collider = r.collider;
+					Collider collider = r.GetComponent<Collider>();
 										
 					if(collider != null)
 					{

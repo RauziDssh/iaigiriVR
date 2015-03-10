@@ -13,7 +13,7 @@ public class consoleBoxBehavior : MonoBehaviour {
         scoreTM = GameObject.Find("scoremesh").GetComponent<TextMesh>();
         guideTM = GameObject.Find("texmesh").GetComponent<TextMesh>();
         gmb = GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
-        this.gameObject.renderer.material.color = transred;
+        this.gameObject.GetComponent<Renderer>().material.color = transred;
 	}
 
     public float timer = 0.0f;
@@ -33,7 +33,7 @@ public class consoleBoxBehavior : MonoBehaviour {
             if (handentered == false)
             {
                 handentered = true;
-                this.gameObject.renderer.material.color = transgreen;
+                this.gameObject.GetComponent<Renderer>().material.color = transgreen;
 
             }
         }
@@ -45,10 +45,10 @@ public class consoleBoxBehavior : MonoBehaviour {
         {
             handentered = true;
             timer += Time.deltaTime;
-            this.gameObject.renderer.material.color = transgreen;
+            this.gameObject.GetComponent<Renderer>().material.color = transgreen;
             if (timer >= 4.0f)
             {
-                this.gameObject.renderer.material.color = transred;
+                this.gameObject.GetComponent<Renderer>().material.color = transred;
                 handentered = false;
                 timer = 0.0f;
                 //処理
@@ -92,7 +92,7 @@ public class consoleBoxBehavior : MonoBehaviour {
         {
             if (handentered == true)
             {
-                this.gameObject.renderer.material.color = transred;
+                this.gameObject.GetComponent<Renderer>().material.color = transred;
                 handentered = false;
                 timer = 0.0f;
                 switch (gmb.state)

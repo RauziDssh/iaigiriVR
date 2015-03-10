@@ -19,7 +19,7 @@ public class woodBehavior : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("tatami"))
         {
-            col.gameObject.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            col.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 

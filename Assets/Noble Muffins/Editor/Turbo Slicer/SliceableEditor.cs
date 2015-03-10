@@ -153,7 +153,7 @@ public class SliceableEditor : Editor
 			{
 				Sliceable s = o as Sliceable;
 				
-				Material[] _mats = s.meshHolder.renderer.sharedMaterials;
+				Material[] _mats = s.meshHolder.GetComponent<Renderer>().sharedMaterials;
 				
 				foreach(Material mat in _mats)
 				{

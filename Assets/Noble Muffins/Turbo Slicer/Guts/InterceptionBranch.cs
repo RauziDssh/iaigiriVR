@@ -61,12 +61,12 @@ partial class TurboSlice
 		backObject.layer = go.layer;
 		
 		
-		Rigidbody originalRigidBody = go.rigidbody;
+		Rigidbody originalRigidBody = go.GetComponent<Rigidbody>();
 		
 		if(originalRigidBody != null)
 		{
-			Rigidbody frontRigidBody = frontObject.rigidbody;
-			Rigidbody backRigidBody = backObject.rigidbody;
+			Rigidbody frontRigidBody = frontObject.GetComponent<Rigidbody>();
+			Rigidbody backRigidBody = backObject.GetComponent<Rigidbody>();
 			
 			if(frontRigidBody != null)
 			{

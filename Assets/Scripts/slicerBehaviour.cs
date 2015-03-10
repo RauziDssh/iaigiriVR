@@ -28,7 +28,7 @@ public class slicerBehaviour : MonoBehaviour {
         // コルーチンの処理
         while (true)
         {
-            this.collider.isTrigger = true;
+            this.GetComponent<Collider>().isTrigger = true;
             yield return new WaitForSeconds (0.1f);
         }
     }
@@ -46,9 +46,9 @@ public class slicerBehaviour : MonoBehaviour {
     {
         if (col.CompareTag("tatami"))
         {
-            if (this.gameObject.transform.parent.gameObject.transform.parent.gameObject.rigidbody.velocity.sqrMagnitude >= 1.2f)
+            if (this.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude >= 1.2f)
             {
-                this.gameObject.collider.isTrigger = true;
+                this.gameObject.GetComponent<Collider>().isTrigger = true;
                 if (col.CompareTag("tatami"))
                 {
                     triggerEnter = true;
@@ -59,18 +59,18 @@ public class slicerBehaviour : MonoBehaviour {
             }
             else
             {
-                this.gameObject.collider.isTrigger = false;
+                this.gameObject.GetComponent<Collider>().isTrigger = false;
             }
         }   
     }
 
     void OnCollisionExit(Collision col) {
-        this.gameObject.collider.isTrigger = true;
+        this.gameObject.GetComponent<Collider>().isTrigger = true;
     }
 
     void OnCollisionEnter(Collision col)
     {
-        this.gameObject.collider.isTrigger = true;
+        this.gameObject.GetComponent<Collider>().isTrigger = true;
     }
 
 
@@ -83,15 +83,15 @@ public class slicerBehaviour : MonoBehaviour {
                     {
 
                         Vector3 endHitPoint = this.gameObject.transform.position;
-                        float headspeed = this.gameObject.transform.parent.gameObject.transform.parent.gameObject.rigidbody.velocity.sqrMagnitude;
+                        float headspeed = this.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Rigidbody>().velocity.sqrMagnitude;
                         if (headspeed >= 12.0f)
                         {
                             Vector3[] triangle = new Vector3[3] { firstHitPoint, tip.transform.position, root.transform.position };
                             GameObject[] slicedObject = turboSlicer.splitByTriangle(col.gameObject, triangle, true);
                             for (int i = 0; i < slicedObject.Length; i++)
                             {
-                                slicedObject[i].rigidbody.constraints = RigidbodyConstraints.None;
-                                slicedObject[i].rigidbody.AddForce((endHitPoint - firstHitPoint) * 5, ForceMode.Impulse);
+                                slicedObject[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                                slicedObject[i].GetComponent<Rigidbody>().AddForce((endHitPoint - firstHitPoint) * 5, ForceMode.Impulse);
                             }
                             scmb.add((this.gameObject.transform.position - firstHitPoint).sqrMagnitude);
                             audioSource.Play();

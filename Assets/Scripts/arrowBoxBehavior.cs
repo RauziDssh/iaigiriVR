@@ -5,7 +5,7 @@ public class arrowBoxBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        this.gameObject.renderer.material.color = transblue;
+        this.gameObject.GetComponent<Renderer>().material.color = transblue;
 	}
 	
 	// Update is called once per frame
@@ -23,7 +23,7 @@ public class arrowBoxBehavior : MonoBehaviour {
             if (handentered == false)
             {
                 handentered = true;
-                this.gameObject.renderer.material.color = transgreen;
+                this.gameObject.GetComponent<Renderer>().material.color = transgreen;
 
             }
         }
@@ -42,7 +42,7 @@ public class arrowBoxBehavior : MonoBehaviour {
         {
             if (handentered == true)
             {
-                this.gameObject.renderer.material.color = transblue;
+                this.gameObject.GetComponent<Renderer>().material.color = transblue;
                 handentered = false;
             }
         }
